@@ -17,7 +17,8 @@ Picture the code. Do you have everything you need?
 Core objects: Employee, Respondent, Manager, Director, Caller, Call, CallHandler
 Relationship: Employee(Respondent, Manager, Director) - CallHandler - Call -> Caller
 Key actions: Employee(receive_call, complete_call, assign_call, escalate_call, is_free, get_rank)
-
+            Call(set_handler, set_rank, get_rank, increament_rank, disconnect)
+            CallHandler(get_handler_for_call, dispatch_call, assign_call)
 '''
 class Employee:    
     def __init__(self, call_handler):
