@@ -9,5 +9,7 @@ Python 3.x version
 
 ## Credit
 Reference by
+* http://interactivepython.org
+* https://github.com/careercup/CtCI-6th-Edition/tree/master
 * https://github.com/bmpasini/CtCI-6th-Edition
 * https://github.com/w-hat/ctci-solutions
