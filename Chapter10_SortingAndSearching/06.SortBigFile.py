@@ -43,4 +43,39 @@ For example, for sorting 900 megabytes of data using only 100 megabytes of RAM:
 
 # Reference by 
 https://en.wikipedia.org/wiki/External_sorting
+
+This code is about k-sorted array merge.
 '''
+
+import heapq
+
+def merge_arrays(arrays):    
+    result = list()
+    heap = list()
+    for array in arrays:
+        if array:
+            heapq.heappush(heap, (array.pop(0), array))
+
+    while heap:
+        smallest = heapq.heappop(heap)
+        result.append(smallest[0])              
+        if smallest[1]:
+            heapq.heappush(heap, (smallest[1].pop(0), smallest[1]))
+
+    return result
+
+
+import unittest
+
+class Test(unittest.TestCase):
+    def setUp(self):
+        array1 = [1, 3, 6]
+        array2 = [2, 4]
+        self.arrays = [array1, array2]
+    
+    def test_merge_arrays(self):
+        self.assertListEqual(merge_arrays(self.arrays), [1,2,3,4,6])
+
+
+if __name__ == "__main__":
+    unittest.main()
