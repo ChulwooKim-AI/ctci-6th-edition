@@ -17,7 +17,7 @@ class Graph:
         result = []
         for x in self.graph.values():
             result.extend(x)
-        return  result
+        return result
 
     def dfs(self, vertex, visited=[]):
         visited.append(vertex)
